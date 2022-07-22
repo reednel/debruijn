@@ -65,11 +65,11 @@ public final class Shuffle {
 		char[] newStr = new char[str.length()];
 		String retStr = "";
 
-		// Handle first half of domain
+		// First half
 		for (int i = 0; i < n; i++)
 			newStr[2 * i] = str.charAt(i);
 
-		// Handle second half of domain
+		// Second half
 		for (int i = n; i < 2 * n; i++)
 			newStr[(2 * i) - (2 * n) + 1] = str.charAt(i);
 
@@ -98,11 +98,11 @@ public final class Shuffle {
 		char[] newStr = new char[str.length()];
 		String retStr = "";
 
-		// Handle first half of domain
+		// First half
 		for (int i = 0; i < n; i++)
 			newStr[(2 * i) + 1] = str.charAt(i);
 
-		// Handle second half of domain
+		// Second half
 		for (int i = n; i < 2 * n; i++)
 			newStr[(2 * i) - (2 * n)] = str.charAt(i);
 
@@ -126,12 +126,12 @@ public final class Shuffle {
 
 		int n = str.length() / 2;
 
-		// Handle first half of domain
+		// First half
 		for (int i = 0; i < n; i++)
 			if (str.charAt(i) != (str.charAt(2 * i)))
 				return false;
 
-		// Handle second half of domain
+		// Second half
 		for (int i = n; i < 2 * n; i++)
 			if (str.charAt(i) != (str.charAt((2 * i) - (2 * n) + 1)))
 				return false;
@@ -152,12 +152,12 @@ public final class Shuffle {
 
 		int n = str.length() / 2;
 
-		// Handle first half of domain
+		// First half
 		for (int i = 0; i < n; i++)
 			if (str.charAt(i) != (str.charAt((2 * i) + 1)))
 				return false;
 
-		// Handle second half of domain (shit ain't transitive)
+		// Second half
 		for (int i = n; i < 2 * n; i++)
 			if (str.charAt(i) != (str.charAt((2 * i) - (2 * n))))
 				return false;
